@@ -1,11 +1,21 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import './App.scss'
-import { Boton } from './components/Boton'
+import { Button } from './components/Button'
+import { Pantalla } from './components/Pantalla'
 
 
 
 const Calculator = () => {
+  const [input, setInput] = useState('')
+
+  const addInput = (value) => {
+    setInput(input + value)
+  }
+
+  const calculateResult = () => {
+
+  }
 
   return (
     <div className='app'>
@@ -18,79 +28,48 @@ const Calculator = () => {
             <hr />
           </div>
         </div>
-        <div className="row ">
-          <div className="col-md-4">
+        <Pantalla input={input} />
+        <div className=" ">
+          <div className="md-4">
             <div className='card mb-3 pt-3 shadow ' >
               <div className="card-body text-primary">
-                <input type="text" className='form-control form-control-lg mb-4 text-center bg-light fs-4 text-primary shadow' value='' />
-                <div className='row'>
-                  <div className="col-3">
-                    <Boton>C/CE</Boton>
+                {/* <input type="text" className='form-control form-control-lg mb-4 text-center bg-light fs-4 text-primary shadow' value='' /> */}
+                <div className=''>
+                  <div className="">
+                    <Button controlClick={addInput}>C/CE</Button>
+                    <Button controlClick={addInput}>9</Button>
+                    <Button controlClick={addInput}>8</Button>
+                    <Button controlClick={addInput}>7</Button>
                   </div>
-                  <div className="col-3">
-                    <Boton>9</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>8</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>7</Boton>
-                  </div>
-                </div>
-                <div className='row mt-2'>
-                  <div className="col-3">
-                    <Boton>-</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>6</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>5</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>4</Boton>
+                  <div className="">
+                    <Button controlClick={addInput}>-</Button>
+                    <Button controlClick={addInput}>6</Button>
+                    <Button controlClick={addInput}>5</Button>
+                    <Button controlClick={addInput}>4</Button>
                   </div>
                 </div>
-                <div className='row mt-2'>
-                  <div className="col-3">
-                    <Boton>/</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>3</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>2</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>1</Boton>
+                <div className=''>
+                  <div className="">
+                    <Button controlClick={addInput}>/</Button>
+                    <Button controlClick={addInput}>3</Button>
+                    <Button controlClick={addInput}>2</Button>
+                    <Button controlClick={addInput}>1</Button>
                   </div>
                 </div>
-                <div className='row mt-2'>
-                  <div className="col-3">
-                    <Boton>+</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>.</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>0</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>,</Boton>
+                <div className=''>
+                  <div className="">
+                    <Button controlClick={addInput}>+</Button>
+                    <Button controlClick={addInput}>.</Button>
+                    <Button controlClick={addInput}>0</Button>
+                    <Button controlClick={addInput}>,</Button>
                   </div>
                 </div>
-                <div className='row mt-2'>
-                  <div className="col-3">
-                    <Boton>(</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>)</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>*</Boton>
-                  </div>
-                  <div className="col-3">
-                    <Boton>=</Boton>
+                <div className=''>
+                  <div className="">
+                    <Button controlClick={addInput}>(</Button>
+                    <Button controlClick={addInput}>)</Button>
+                    <Button controlClick={addInput}>*</Button>
+                    <Button controlClick={addInput}>=</Button>
                   </div>
                 </div>
               </div>
