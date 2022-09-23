@@ -16,9 +16,9 @@ const Calculator = () => {
   }
 
   const calculateResult = () => {
-    if(input){
+    if (input) {
       setInput(evaluate(input))
-    } else{
+    } else {
       alert('Por favor ingrese valores para realizar los cálculos')
     }
 
@@ -26,68 +26,44 @@ const Calculator = () => {
 
   return (
     <div className='app'>
-      <div className='container '>
-        <div className="">
-          <div className="">
-            <h1 className='display-6 fw-bolder text-center text-primary'>
-              calculator
-            </h1>
-            <hr />
-          </div>
-        </div>
+      <div className="title-container">
+        <h1 className='display-6 fw-bolder text-center text-primary'>
+          calculator
+        </h1>
+        <hr />
+      </div>
+      <div className='calculator-container'>
         <Pantalla input={input} />
-        <div className=" ">
-          <div className="">
-            <div className=' ' >
-              <div className="">
-                {/* <input type="text" className='form-control form-control-lg mb-4 text-center bg-light fs-4 text-primary shadow' value='' /> */}
-                <div className=''>
-                  <div className="">
-                    <Button controlClick={addInput}>C/CE</Button>
-                    <Button controlClick={addInput}>9</Button>
-                    <Button controlClick={addInput}>8</Button>
-                    <Button controlClick={addInput}>7</Button>
-                  </div>
-                  <div className="">
-                    <Button controlClick={addInput}>-</Button>
-                    <Button controlClick={addInput}>6</Button>
-                    <Button controlClick={addInput}>5</Button>
-                    <Button controlClick={addInput}>4</Button>
-                  </div>
-                </div>
-                <div className=''>
-                  <div className="">
-                    <Button controlClick={addInput}>/</Button>
-                    <Button controlClick={addInput}>3</Button>
-                    <Button controlClick={addInput}>2</Button>
-                    <Button controlClick={addInput}>1</Button>
-                  </div>
-                </div>
-                <div className=''>
-                  <div className="">
-                    <Button controlClick={addInput}>+</Button>
-                    <Button controlClick={addInput}>.</Button>
-                    <Button controlClick={addInput}>0</Button>
-                    <Button controlClick={addInput}>,</Button>
-                  </div>
-                </div>
-                <div className=''>
-                  <div className="">
-                    <Button controlClick={addInput}>(</Button>
-                    <Button controlClick={addInput}>)</Button>
-                    <Button controlClick={addInput}>*</Button>
-                    <Button controlClick={calculateResult}>=</Button>
-                  </div>
-                  <div>
-                    <ButtonClear controlClickClear={() => setInput('')}> Clear </ButtonClear> 
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* <input type="text" className='form-control form-control-lg mb-4 text-center bg-light fs-4 text-primary shadow' value='' /> */}
+          <div className="my-row">
+            <Button controlClick={addInput}>7</Button>
+            <Button controlClick={addInput}>8</Button>
+            <Button controlClick={addInput}>9</Button>
+            <Button controlClick={addInput}>*</Button>
+          </div>
+          <div className='my-row'>
+            <Button controlClick={addInput}>4</Button>
+            <Button controlClick={addInput}>5</Button>
+            <Button controlClick={addInput}>6</Button>
+            <Button controlClick={addInput}>-</Button>
+          </div>
+          <div className='my-row'>
+            <Button controlClick={addInput}>1</Button>
+            <Button controlClick={addInput}>2</Button>
+            <Button controlClick={addInput}>3</Button>
+            <Button controlClick={addInput}>+</Button>
+          </div>
+          <div className='my-row'>
+            <Button controlClick={calculateResult}>=</Button>
+            <Button controlClick={addInput}>0</Button>
+            <Button controlClick={addInput}>.</Button>
+            <Button controlClick={addInput}>/</Button>
+          <div className='my-row'>
+            <ButtonClear controlClickClear={() => setInput('')}> Clear </ButtonClear>
           </div>
         </div>
       </div>
-    </div>
+    </div>                                                                                                                                     
   )
 }
 

@@ -3,7 +3,7 @@ import React from 'react'
 const ButtonClear = (props) => {
 return (
     <div
-    className='' 
+    className='button-clear' 
     onClick={props.controlClickClear}>
         {props.children}
     </div>
