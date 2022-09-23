@@ -1,5 +1,9 @@
 
 export const Button = (props) => {
+    
+    const isOperator = value =>{
+        return isNaN(value) && (value != '.') && (value != '=')
+    }
     return (
         <div 
         className='button'

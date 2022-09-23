@@ -2,7 +2,9 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import './App.scss'
 import { Button } from './components/Button'
+import ButtonClear from './components/ButtonClear'
 import { Pantalla } from './components/Pantalla'
+import { evaluate } from 'mathjs';
 
 
 
@@ -14,14 +16,19 @@ const Calculator = () => {
   }
 
   const calculateResult = () => {
+    if(input){
+      setInput(evaluate(input))
+    } else{
+      alert('Por favor ingrese valores para realizar los cálculos')
+    }
 
   }
 
   return (
     <div className='app'>
-      <div className='container my-2'>
-        <div className="row">
-          <div className="col-12">
+      <div className='container '>
+        <div className="">
+          <div className="">
             <h1 className='display-6 fw-bolder text-center text-primary'>
               calculator
             </h1>
@@ -30,9 +37,9 @@ const Calculator = () => {
         </div>
         <Pantalla input={input} />
         <div className=" ">
-          <div className="md-4">
-            <div className='card mb-3 pt-3 shadow ' >
-              <div className="card-body text-primary">
+          <div className="">
+            <div className=' ' >
+              <div className="">
                 {/* <input type="text" className='form-control form-control-lg mb-4 text-center bg-light fs-4 text-primary shadow' value='' /> */}
                 <div className=''>
                   <div className="">
@@ -69,7 +76,10 @@ const Calculator = () => {
                     <Button controlClick={addInput}>(</Button>
                     <Button controlClick={addInput}>)</Button>
                     <Button controlClick={addInput}>*</Button>
-                    <Button controlClick={addInput}>=</Button>
+                    <Button controlClick={calculateResult}>=</Button>
+                  </div>
+                  <div>
+                    <ButtonClear controlClickClear={() => setInput('')}> Clear </ButtonClear> 
                   </div>
                 </div>
               </div>
