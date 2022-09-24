@@ -15,14 +15,13 @@ const Calculator = () => {
     setInput(input + value)
   }
 
-  const calculateResult = () => {
+  function calculateResult() {
     if (input) {
-      setInput(evaluate(input))
+      setInput(evaluate(input));
     } else {
-      alert('Por favor ingrese valores para realizar los cálculos')
+      alert("Por favor ingrese valores para realizar los cálculos.");
     }
-
-  }
+  };
 
   return (
     <div className='app'>
@@ -33,31 +32,31 @@ const Calculator = () => {
           <Pantalla input={input} />
           {/* <input type="text" className='form-control form-control-lg mb-4 text-center bg-light fs-4 text-primary shadow' value='' /> */}
           <div className="my-row">
-            <Button controlClick={addInput}>7</Button>
-            <Button controlClick={addInput}>8</Button>
-            <Button controlClick={addInput}>9</Button>
-            <Button controlClick={addInput}>*</Button>
+            <Button controlClick={addInput} id='7'>7</Button>
+            <Button controlClick={addInput} id='8'>8</Button>
+            <Button controlClick={addInput} id='9'>9</Button>
+            <Button controlClick={addInput} id='multiply'>*</Button>
           </div>
           <div className='my-row'>
-            <Button controlClick={addInput}>4</Button>
-            <Button controlClick={addInput}>5</Button>
-            <Button controlClick={addInput}>6</Button>
-            <Button controlClick={addInput}>-</Button>
+            <Button controlClick={addInput} id='4'>4</Button>
+            <Button controlClick={addInput} id='5'>5</Button>
+            <Button controlClick={addInput} id='6'>6</Button>
+            <Button controlClick={addInput} id='subtract'>-</Button>
           </div>
           <div className='my-row'>
-            <Button controlClick={addInput}>1</Button>
-            <Button controlClick={addInput}>2</Button>
-            <Button controlClick={addInput}>3</Button>
-            <Button controlClick={addInput}>+</Button>
+            <Button controlClick={addInput} id='1'>1</Button>
+            <Button controlClick={addInput} id='2'>2</Button>
+            <Button controlClick={addInput} id='3'>3</Button>
+            <Button controlClick={addInput} id='add'>+</Button>
           </div>
           <div className='my-row'>
-            <Button controlClick={addInput}>0</Button>
-            <Button controlClick={addInput}>.</Button>
-            <Button controlClick={calculateResult}>=</Button>
-            <Button controlClick={addInput}>/</Button>
+            <Button controlClick={addInput} id='0'>0</Button>
+            <Button controlClick={addInput} id='.'>.</Button>
+            <Button controlClick={calculateResult} id='equals'>=</Button>
+            <Button controlClick={addInput} id='divide'>/</Button>
           </div>
           <div className='my-row'>
-            <ButtonClear controlClickClear={() => setInput('')}> 
+            <ButtonClear controlClickClear={() => setInput('0')}> 
               Clear 
             </ButtonClear>
           </div>
